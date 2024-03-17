@@ -3,6 +3,7 @@ import initMap from "./loadMap";
 
 function Footer() {
 	initMap();
+    console.log(import.meta.env.VITE_GOOGLE_MAP_API);
 	return (
 		<footer className="relative w-full bg-gradient-to-r from-slate-900 to-slate-700 text-white py-12 px-4 md:px-0">
 			{/* Add linear gradient border at the top */}

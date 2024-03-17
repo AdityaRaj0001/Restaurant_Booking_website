@@ -6,7 +6,7 @@ const initMap = async function initMap() {
 	const map = new Map(document.getElementById("map"), {
 		zoom: 8,
 		center: companyLocation,
-		mapId: "ae551e20344edd6b",
+		mapId: import.meta.env.VITE_GOOGLE_MAP_ID,
 	});
 
 	let marker = new google.maps.Marker({
