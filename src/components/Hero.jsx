@@ -2,7 +2,7 @@ import React from "react";
 
 const Hero = () => {
   return (
-    <div className="h-[70vh] relative w-full flex flex-col text-white  flex items-center justify-center">
+    <div className="h-[70vh] relative w-full  flex-col text-white  flex items-center justify-center">
       <img
         src="./homehero.jpg"
         className="h-full -z-20 absolute object-cover"
