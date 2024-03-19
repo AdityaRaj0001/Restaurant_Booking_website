@@ -1,9 +1,31 @@
-import React, { useEffect } from "react";
+import React, {useEffect, useState} from "react";
 import initMap from "./loadMap";
+import axios from "axios";
 
 function Footer() {
+	const [street, setStreet] = useState('');
+	const [city, setCity] = useState('');
+	const [country, setCountry] = useState('');
+	useEffect(() =>{
+		getAddress();
+	}, []);
+	const getAddress = async() =>{
+		try {
+			const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/restaurant-address`, {
+				headers: {
+					Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
+				},
+			});
+
+			console.log(res.data.data.attributes);
+			setStreet(res.data.data.attributes.Street_Address);
+			setCity(res.data.data.attributes.City_or_Locality);
+			setCountry(res.data.data.attributes.Country);
+		} catch (error) {
+			console.log(error.message);
+		}
+	}
 	initMap();
-    console.log(import.meta.env.VITE_GOOGLE_MAP_API);
 	return (
 		<footer className="relative w-full bg-gradient-to-r from-slate-900 to-slate-700 text-white py-12 px-4 md:px-0">
 			{/* Add linear gradient border at the top */}
@@ -12,9 +34,9 @@ function Footer() {
 			<div className="container mx-auto flex flex-wrap justify-between">
 				<div className="w-full md:w-1/4 px-4">
 					<h3 className="text-xl font-bold mb-4">Office</h3>
-					<p>220 Headstone Ln</p>
-					<p>Harrow HA2 6LY</p>
-					<p>United Kingdom</p>
+					<p>{street}</p>
+					<p>{city}</p>
+					<p>{country}</p>
 					<p className="border-b border-orange-500 inline-block mt-4">alexastockphotos@gamil.com</p>
 					<h4 className="mt-4">+44 20 8421 1442</h4>
 				</div>

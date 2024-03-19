@@ -1,12 +1,32 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 
 const Hero = () => {
+  const [heroUrl, setHeroUrl] = useState('');
+  useEffect(() =>{
+    getHeroUrl();
+  }, []);
+
+  const getHeroUrl = async() =>{
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/hero-section?populate=*`, {
+				headers: {
+					Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
+				},
+			});
+
+      setHeroUrl(`${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.homehero.data[0].attributes.url}`);
+      console.log(heroUrl);
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
   return (
     <div className="h-[70vh] relative w-full flex flex-col text-white  flex items-center justify-center">
       <img
-        src="./homehero.jpg"
+        src={heroUrl}
         className="h-full -z-20 absolute object-cover"
-        alt=""
+        alt="hero-img"
       />
       <div className="overlay -z-10 w-full h-full bg-black opacity-35 top-0 absolute"></div>
       <div className="h-1/2 mb-4   w-full  flex flex-col items-center justify-center text">

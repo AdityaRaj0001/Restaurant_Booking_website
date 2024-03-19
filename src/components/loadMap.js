@@ -1,7 +1,17 @@
+import axios from "axios";
+
 const initMap = async function initMap() {
 	const companyLocation = { lat: 51.59989, lng: -0.35631 };
 
 	const { Map } = await google.maps.importLibrary("maps");
+
+	const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/map-location-pin?populate=*`, {
+		headers: {
+			Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
+		},
+	});
+
+	const imageUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.image.data[0].attributes.url}`;
 
 	const map = new Map(document.getElementById("map"), {
 		zoom: 8,
@@ -14,7 +24,7 @@ const initMap = async function initMap() {
 		position: companyLocation,
 		title: "Blue Room Sports Venue",
 		icon: {
-			url: "https://png.pngtree.com/png-clipart/20221229/original/pngtree-restaurant-location-pin-icon-in-gold-yellow-color-png-image_8824535.png",
+			url: imageUrl,
 			scaledSize: new google.maps.Size(120, 120),
 		},
 		animation: google.maps.Animation.BOUNCE,
