@@ -11,39 +11,25 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet"
+import { FaBars } from "react-icons/fa";
 
-export default function SheetDemo() {
+export default function Sidebar() {
   return (
-    <Sheet>
-      <SheetTrigger asChild>
-        <Button variant="outline">Open</Button>
+    <Sheet className="w-[20px] ">
+      <SheetTrigger >
+      <FaBars className="text-2xl md:hidden" />
       </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
-          <SheetTitle>Edit profile</SheetTitle>
-          <SheetDescription>
-            Make changes to your profile here. Click save when you're done.
-          </SheetDescription>
-        </SheetHeader>
-        <div className="grid gap-4 py-4">
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="name" className="text-right">
-              Name
-            </Label>
-            <Input id="name" value="Pedro Duarte" className="col-span-3" />
-          </div>
-          <div className="grid grid-cols-4 items-center gap-4">
-            <Label htmlFor="username" className="text-right">
-              Username
-            </Label>
-            <Input id="username" value="@peduarte" className="col-span-3" />
-          </div>
-        </div>
-        <SheetFooter>
-          <SheetClose asChild>
-            <Button type="submit">Save changes</Button>
-          </SheetClose>
-        </SheetFooter>
+      <SheetContent  className="bg-[url('./sidebarbg.jpg')]  bg-cover text-white text-lg ">
+        <ul className="mt-16 flex flex-col gap-4 font-medium">
+          <li className=" pl-4">MENUS</li>
+          <li className=" pl-4">OCCASSIONS</li>
+          <li className=" pl-4">GALLERY</li>
+          <li className=" pl-4">PRESS</li>
+          <li className=" pl-4">ABOUT</li>
+          <li className=" pl-4">CONTACT</li>
+          <button className="text-left pl-4 py-2 font-normal  text-black bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] tracking-wider  ">BOOK TABLE</button>
+         
+        </ul>
       </SheetContent>
     </Sheet>
   )

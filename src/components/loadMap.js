@@ -24,7 +24,7 @@ const initMap = async function initMap() {
 		position: companyLocation,
 		title: "Blue Room Sports Venue",
 		icon: {
-			url: imageUrl,
+			url: './location.png',
 			scaledSize: new google.maps.Size(120, 120),
 		},
 		animation: google.maps.Animation.BOUNCE,
