@@ -17,7 +17,8 @@ const Navbar = () => {
           <li className=" ">PRESS</li>
           <li className=" ">ABOUT</li>
           <li className="">CONTACT</li>
-          <button className="text-left px-2  py-2 font-normal text-sm  text-black bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] tracking-wider  ">
+          
+          <button className="text-left flex items-center justify-center py-2 font-normal text-sm  text-black bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] w-[100px]  ">
             BOOK TABLE
           </button>
         </ul>

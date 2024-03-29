@@ -1,5 +1,5 @@
 
-const Second = () => {
+const PaperBanner = () => {
   return (
     <div className='h-[20vh] relative w-full shadow-xl'>
         <div className="absolute z-10 top-0 h-[10px] w-full bg-gradient-to-r from-[#8c7050] via-white to-[#8c7050]"></div>
@@ -11,4 +11,4 @@ const Second = () => {
   )
 }
 
-export default Second
+export default PaperBanner
