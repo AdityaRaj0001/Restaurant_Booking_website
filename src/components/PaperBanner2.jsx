@@ -1,9 +1,9 @@
 
 const PaperBanner2 = () => {
     return (
-      <div className='h-[20vh] relative w-full shadow-xl flex flex-col items-center justify-center'>
+      <div className='h-[20vh] relative w-full shadow-xl flex flex-col items-start bg-repeat bg-[url(./paper-bg.jpg)] justify-center'>
           <div className="absolute z-10 bottom-0 h-[10px] w-full bg-gradient-to-r from-[#8c7050] via-white to-[#8c7050]"></div>
-          <img src="./paper-bg.jpg" className="object-cover h-full w-full"></img>
+         
           <div className="w-full absolute h-full flex flex-col items-center justify-center">
 
           <p className="w-full text-center">1947 LONDON</p>

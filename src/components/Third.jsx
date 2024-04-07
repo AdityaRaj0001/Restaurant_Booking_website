@@ -40,14 +40,11 @@ const Third = () => {
       </p>
 
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute left-0 z-20  -top-8 w-[15%] md:w-[5%] "
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute right-0 z-20  top-0 w-[15%] md:w-[5%] -scale-x-100 "
-        ></img>
+        
+      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+        <img src="./plant-bg big.png" className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] -scale-y-100" alt="plant background"></img>
+        <img src="./plant-bg big right.png" className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 " alt="plant background"></img>
         <div className="imagediv h-[40%] w-3/4 md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
         </div>
@@ -70,14 +67,11 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute left-0 z-20  -top-8 w-[15%] md:w-[5%] "
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute right-0 z-20  top-0 w-[15%] md:w-[5%]  -scale-x-100 "
-        ></img>
+         
+      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
         <div className="imagediv h-[40%] w-3/4 md:order-2 md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
         </div>
@@ -100,14 +94,10 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute left-0 z-20  -top-8 w-[15%] md:w-[5%] "
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute right-0 z-20  top-0 w-[15%] md:w-[5%]  -scale-x-100 "
-        ></img>
+      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
         <div className="imagediv h-[40%] w-3/4  md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
         </div>
@@ -130,14 +120,10 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute left-0 z-20  -top-8 w-[15%] md:w-[5%] "
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute right-0 z-20  top-0 w-[15%] md:w-[5%]  -scale-x-100 "
-        ></img>
+    <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+        <img src="./plant-bg big.png" className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] scale-y-100" alt="plant background"></img>
+        <img src="./plant-bg big right.png" className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 " alt="plant background"></img>
         <div className="imagediv h-[40%] w-3/4 md:order-2  md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
         </div>
@@ -160,14 +146,10 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute left-0 z-20  -top-8 w-[15%] md:w-[5%] "
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute right-0 z-20  top-0 w-[15%] md:w-[5%]  -scale-x-100 "
-        ></img>
+      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
+        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
         <div className="imagediv h-[40%] w-3/4   md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
         </div>
