@@ -1,7 +1,7 @@
 import React from "react";
 import Slideshow from "../components/Slideshow"
 import BookTable from "../components/BookTable"
-import PaperBanner2 from "./PaperBanner2";
+import PaperBanner2 from "../components/PaperBanner2";
 const Menu = () => {
   return (
     <div className="h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
