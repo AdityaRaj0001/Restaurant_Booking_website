@@ -2,6 +2,7 @@ import React from "react";
 import Slideshow from "../components/Slideshow"
 import BookTable from "../components/BookTable"
 import PaperBanner2 from "./PaperBanner2";
+import Footer from "./Footer";
 const Menu = () => {
   return (
     <div className="h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
@@ -75,7 +76,8 @@ const Menu = () => {
       </div>
       <Slideshow/>
       <BookTable/>
-      <PaperBanner2/>
+      
+      <Footer/>
 
 
      
