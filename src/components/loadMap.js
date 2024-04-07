@@ -5,13 +5,13 @@ const initMap = async function initMap() {
 
 	const { Map } = await google.maps.importLibrary("maps");
 
-	const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/map-location-pin?populate=*`, {
-		headers: {
-			Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
-		},
-	});
+	// const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/map-location-pin?populate=*`, {
+	// 	headers: {
+	// 		Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
+	// 	},
+	// });
 
-	const imageUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.image.data[0].attributes.url}`;
+	// const imageUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.image.data[0].attributes.url}`;
 
 	const map = new Map(document.getElementById("map"), {
 		zoom: 8,

@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
+
+import BookTableForm from "../components/BookTableForm";
 
 const BookATable = () => {
-  return (
-    <div>BookATable</div>
-  )
-}
+	return (
+		<>
+			<div>BookATable</div>
+			<BookTableForm />
+		</>
+	);
+};
 
-export default BookATable
+export default BookATable;

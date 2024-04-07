@@ -6,7 +6,7 @@ const PaperBanner2 = () => {
           <img src="./paper-bg.jpg" className="object-cover h-full w-full"></img>
           <div className="w-full absolute h-full flex flex-col items-center justify-center">
 
-          <p className="w-full text-center  ">1947 LONDON</p>
+          <p className="w-full text-center">1947 LONDON</p>
           <div className="w-4/5 px-4  flex justify-center gap-2  items-center">
             <div className="h-[2px] w-[10%] bg-black"></div>
             <p className="h-full flex px-2 items-center justify-center font-medium  text-center text-2xl ">
