@@ -18,7 +18,7 @@ export default function Home() {
       <BookTable/>
       <Grid/>
       <PaperBanner2/>
-      {/* <Footer /> */}
+      <Footer />
       
     </main>
   )
