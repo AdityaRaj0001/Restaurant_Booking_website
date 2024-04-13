@@ -17,7 +17,6 @@ export default function Home() {
       <Slideshow/>
       <BookTable/>
       <Grid/>
-      {/* <PaperBanner2/> */}
       <Footer />
       
     </main>
