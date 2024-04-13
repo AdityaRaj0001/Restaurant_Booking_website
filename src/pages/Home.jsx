@@ -17,6 +17,10 @@ export default function Home() {
       <Slideshow/>
       <BookTable/>
       <Grid/>
+<<<<<<< HEAD
+=======
+      <PaperBanner2/>
+>>>>>>> 4db95c2fe5401797f771363fbd16da0c23c42415
       <Footer />
       
     </main>

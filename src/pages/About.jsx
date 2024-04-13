@@ -1,8 +1,16 @@
 import React from 'react'
-
+import Hero from "../components/Hero";
+import Menu from "../components/Menu";
+import BookTable from "../components/BookTable"
+import PaperBanner2 from "../components/PaperBanner2"
 const About = () => {
   return (
-    <div>About</div>
+    <main className="min-h-[100vh] relative w-full">
+      <Hero maintext="About" heroimg="./default-gallery-10.jpg" />
+      <Menu />
+      <BookTable />
+      <PaperBanner2/>
+    </main>
   )
 }
 

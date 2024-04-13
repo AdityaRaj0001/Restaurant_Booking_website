@@ -9,11 +9,14 @@ import Menus from "./pages/Menus";
 import Occassions from "./pages/Occassions";
 import Press from "./pages/Press";
 import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
 
@@ -25,6 +28,7 @@ function App() {
           <Route path="/occassions" element={<Occassions />} />
           <Route path="/press" element={<Press />} />
         </Routes>
+        <Footer/>
       </BrowserRouter>
     </>
   );
