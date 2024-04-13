@@ -1,8 +1,41 @@
-import React from "react";
+import React, { useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
+gsap.registerPlugin(ScrollTrigger);
 
 const Third = () => {
+  const containerRef = useRef(null);
+  const screenWidth = window.innerWidth;
+
+  useGSAP(
+    () => {
+      let imagedivs = gsap.utils.toArray(".imagediv");
+      let storydivs = gsap.utils.toArray(".storydiv");
+      if (screenWidth > 768) {
+        for (let i = 0; i < imagedivs.length; i++) {
+          gsap.from([storydivs[i], imagedivs[i]], {
+            opacity: 0,
+            duration: 1.5,
+            stagger: 0.4,
+            scrollTrigger: {
+              trigger: storydivs[i],
+              start: "-100% top",
+              end: "-100% top",
+              markers: true,
+            },
+          });
+        }
+      }
+    },
+    { scope: containerRef }
+  );
+
   return (
-    <div className="h-auto w-full flex flex-col items-center justify-start pt-12 gap-4">
+    <div
+      ref={containerRef}
+      className="h-auto w-full flex flex-col items-center justify-start pt-12 gap-4"
+    >
       <p className="w-3/5 text-center">Lorem ipsum dolor, sit amet </p>
       <div className="w-4/5 px-4  flex justify-center  items-center">
         <div className="h-[2px] w-[10%] bg-black"></div>
@@ -39,14 +72,32 @@ const Third = () => {
         temporibus dolore quis neque?{" "}
       </p>
 
-      <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-        
-      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
-        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
-        <img src="./plant-bg big.png" className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] -scale-y-100" alt="plant background"></img>
-        <img src="./plant-bg big right.png" className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 " alt="plant background"></img>
+      <div className="h-[60vh]  mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plant-bg big.png"
+          className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] -scale-y-100"
+          alt="plant background"
+        ></img>
+        <img
+          src="./plant-bg big right.png"
+          className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 "
+          alt="plant background"
+        ></img>
         <div className="imagediv h-[40%] w-3/4 md:w-1/3 md:h-3/4 flex items-center justify-center">
-          <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
+          <img
+            src="./story.jpg"
+            className="h-full md:w-full  object-cover"
+          ></img>
         </div>
         <div className="storydiv h-[60%] w-3/4  md:w-1/3 md:h-full flex flex-col pt-8  items-center justify-center md:pt-0 px-8 ">
           <p className="text-violet-700 w-full text-center">
@@ -67,13 +118,31 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-         
-      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
-        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100"
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 "
+          alt="plant background"
+        ></img>
         <div className="imagediv h-[40%] w-3/4 md:order-2 md:w-1/3 md:h-3/4 flex items-center justify-center">
-          <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
+          <img
+            src="./story.jpg"
+            className="h-full md:w-full  object-cover"
+          ></img>
         </div>
         <div className="storydiv h-[60%] w-3/4  md:w-1/3 md:h-full flex flex-col pt-8  items-center justify-center md:pt-0 px-8 ">
           <p className="text-violet-700 w-full text-center">
@@ -94,12 +163,31 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
-        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100"
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 "
+          alt="plant background"
+        ></img>
         <div className="imagediv h-[40%] w-3/4  md:w-1/3 md:h-3/4 flex items-center justify-center">
-          <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
+          <img
+            src="./story.jpg"
+            className="h-full md:w-full  object-cover"
+          ></img>
         </div>
         <div className="storydiv h-[60%] w-3/4  md:w-1/3 md:h-full flex flex-col pt-8  items-center justify-center md:pt-0 px-8 ">
           <p className="text-violet-700 w-full text-center">
@@ -120,12 +208,31 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-    <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
-        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
-        <img src="./plant-bg big.png" className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] scale-y-100" alt="plant background"></img>
-        <img src="./plant-bg big right.png" className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 " alt="plant background"></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plant-bg big.png"
+          className="absolute hidden xl:block left-0 z-20  -top-8 w-[18%] scale-y-100"
+          alt="plant background"
+        ></img>
+        <img
+          src="./plant-bg big right.png"
+          className="absolute hidden  xl:block right-0 z-20 -top-8 w-[18%] scale-y-100 "
+          alt="plant background"
+        ></img>
         <div className="imagediv h-[40%] w-3/4 md:order-2  md:w-1/3 md:h-3/4 flex items-center justify-center">
-          <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
+          <img
+            src="./story.jpg"
+            className="h-full md:w-full  object-cover"
+          ></img>
         </div>
         <div className="storydiv h-[60%] w-3/4  md:w-1/3 md:h-full flex flex-col pt-8  items-center justify-center md:pt-0 px-8 ">
           <p className="text-violet-700 w-full text-center">
@@ -146,12 +253,31 @@ const Third = () => {
         </div>
       </div>
       <div className="h-[60vh] mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
-      <img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
-        <img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100" alt="plant background"></img>
-        <img src="./plantbgfiller.png" className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 " alt="plant background"></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgmobile.png"
+          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden xl:block left-0 z-20  top-32 w-[10%] scale-y-100"
+          alt="plant background"
+        ></img>
+        <img
+          src="./plantbgfiller.png"
+          className="absolute hidden  xl:block right-0 z-20 top-32 w-[10%] -scale-x-100 "
+          alt="plant background"
+        ></img>
         <div className="imagediv h-[40%] w-3/4   md:w-1/3 md:h-3/4 flex items-center justify-center">
-          <img src="./story.jpg" className="h-full md:w-full  object-cover"></img>
+          <img
+            src="./story.jpg"
+            className="h-full md:w-full  object-cover"
+          ></img>
         </div>
         <div className="storydiv h-[60%] w-3/4  md:w-1/3 md:h-full flex flex-col pt-8  items-center justify-center md:pt-0 px-8 ">
           <p className="text-violet-700 w-full text-center">
@@ -171,7 +297,6 @@ const Third = () => {
           </button>
         </div>
       </div>
-     
     </div>
   );
 };

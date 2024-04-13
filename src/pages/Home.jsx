@@ -9,8 +9,7 @@ import Grid from "../components/Grid"
 import PaperBanner2 from "../components/PaperBanner2"
 export default function Home() {
   return (
-    <main className="min-h-[100vh] relative w-full">
-      <Navbar/>
+    <main className="min-h-[100vh] relative w-full overflow-hidden">
       <LandingHero/>
       < PaperBanner/>
       <Third/>
@@ -18,7 +17,6 @@ export default function Home() {
       <BookTable/>
       <Grid/>
       <PaperBanner2/>
-      <Footer />
       
     </main>
   )
