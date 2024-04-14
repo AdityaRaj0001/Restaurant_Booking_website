@@ -51,6 +51,7 @@ const Gallery = () => {
   }, {});
 
   return (
+
     <main className="min-h-[100vh] overflow-hidden relative w-full">
       <Hero maintext="Gallery" heroimg="./default-gallery-10.jpg" />
       <div className="occasionparent   h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
@@ -111,5 +112,6 @@ const Gallery = () => {
     </main>
   );
 };
+
 
 export default Gallery;

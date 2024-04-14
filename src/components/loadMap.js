@@ -33,7 +33,7 @@ const initMap = async function initMap() {
 	};
 
 	if (!imageUrl) {
-		icon.url = "./location.png";
+		icon.url = "./restaurant-location-pin-icon.png";
 	} else {
 		icon.url = imageUrl;
 	}

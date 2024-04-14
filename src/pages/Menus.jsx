@@ -1,10 +1,10 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import Hero from "../components/Hero";
 import Menu from "../components/Menu";
-import Slideshow from "../components/Slideshow"
-import BookTable from "../components/BookTable"
+import Slideshow from "../components/Slideshow";
+import BookTable from "../components/BookTable";
 import Footer from "../components/Footer";
+import axios from "axios";
 
 const Menus = () => {
   return (
