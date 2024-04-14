@@ -1,31 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import initMap from "./loadMap";
-import axios from "axios";
 import { FaFacebook, FaWhatsapp, FaTwitter, FaInstagram } from "react-icons/fa"; // Import the icons you want to use
 
 function Footer() {
-	const [street, setStreet] = useState("");
-	const [city, setCity] = useState("");
-	const [country, setCountry] = useState("");
-	useEffect(() => {
-		getAddress();
-	}, []);
-	const getAddress = async () => {
-		try {
-			const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/restaurant-address`, {
-				headers: {
-					Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
-				},
-			});
-
-			console.log(res.data.data.attributes);
-			setStreet(res.data.data.attributes.Street_Address);
-			setCity(res.data.data.attributes.City_or_Locality);
-			setCountry(res.data.data.attributes.Country);
-		} catch (error) {
-			console.log(error.message);
-		}
-	};
 	initMap();
 	return (
 		<>

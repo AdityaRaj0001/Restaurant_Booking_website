@@ -12,7 +12,10 @@
 body,html{
     width: 100%;
     height: 100%;
+    
 }
+
+
 
 #map {
     border: 2px solid rgb(181, 42, 42);
