@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 
 const Menus = () => {
   return (
-    <main className="min-h-[100vh] relative w-full">
+    <main className="min-h-[100vh] overflow-hidden relative w-full">
       <Hero maintext="Food & Drinks" heroimg="./default-gallery-10.jpg" />
       <Menu />
       <Slideshow />

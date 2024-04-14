@@ -20,7 +20,6 @@ const PaperBanner = () => {
             trigger: flowersbigarray[i],
             start: "-60% top",
             end: "-60% top",
-            markers: true,
           },
         });
       }

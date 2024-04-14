@@ -10,7 +10,7 @@ import EnquiryForm from '../components/EnquiryForm';
 
 const Occassions = () => {
   return (
-    <main className="min-h-[100vh] relative w-full">
+    <main className="min-h-[100vh] overflow-hidden relative w-full">
       <Navbar />
       <Hero maintext="Special Occasions" heroimg="./default-gallery-10.jpg" />
       <OccasionSecond/>

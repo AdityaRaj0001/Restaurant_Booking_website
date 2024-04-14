@@ -28,10 +28,7 @@ const EnquiryForm = () => {
     }
 
 	return (
-		<div className="max-w-md mx-auto">
-			<h2 className="text-xl font-bold mb-4 text-center">Enquire Now</h2>
-			<p className="mb-4 text-gray-600 text-center">Get in touch for large group, celebration, and event bookings. We typically reply on the same day during opening hours.</p>
-
+		<div className="max-w-md mx-auto mb-12 md:mb-24">
 			<form onSubmit={handleSubmit} className="space-y-4">
 				<div>
 					<label htmlFor="firstname" className="block mb-1">
@@ -65,7 +62,7 @@ const EnquiryForm = () => {
 					</div>
 				</div>
 
-				<button type="submit" className={` mt-3 w-full px-4 py-2 rounded-md hover:bg-blue-600 ${!verified ? "bg-blue-300 text-gray-600 cursor-not-allowed" : "bg-blue-500 text-white"}`} disabled={!verified}>
+				<button type="submit" className={` mt-3 w-full px-4 py-2 rounded-md hover:bg-violet-900 ${!verified ? "bg-violet-900 text-white cursor-not-allowed" : "bg-violet-900 text-white"}`} disabled={!verified}>
 					Submit
 				</button>
 			</form>
