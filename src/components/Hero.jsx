@@ -65,7 +65,7 @@ const Hero = ({ maintext, heroimg }) => {
       <div className="h-1/2 mb-4   w-full  flex flex-col items-center justify-center text">
         <div className="h-1/5 w-full flex justify-center gap-4 items-center">
           <div className="titleline h-[2px] w-[5%] bg-white"></div>
-          <p className="w-auto h-full flex items-center justify-center  text-center text-3xl md:text-5xl font-medium ">
+          <p className="w-auto h-full flex items-center justify-center uppercase sedan-regular  text-center text-3xl md:text-5xl font-medium ">
             {maintext}
           </p>
           <div className="titleline h-[2px] w-[5%] bg-white"></div>

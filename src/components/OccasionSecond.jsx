@@ -22,7 +22,7 @@ const OccasionSecond = () => {
   }, {});
 
   return (
-    <div className="occasionparent pb-20   h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
+    <div className="occasionparent pb-20  h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
       <img
         src="./plantbgmobile.png"
         className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
