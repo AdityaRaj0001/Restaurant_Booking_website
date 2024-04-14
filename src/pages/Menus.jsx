@@ -7,6 +7,7 @@ import Footer from "../components/Footer";
 import axios from "axios";
 
 const Menus = () => {
+<<<<<<< HEAD
 	const [heroUrl, setHeroUrl] = useState("");
 
 	useEffect(() => {
@@ -36,6 +37,16 @@ const Menus = () => {
 			<BookTable />
 		</main>
 	);
+=======
+  return (
+    <main className="min-h-[100vh] overflow-hidden relative w-full">
+      <Hero maintext="Food & Drinks" heroimg="./default-gallery-10.jpg" />
+      <Menu />
+      <Slideshow />
+      <BookTable />
+    </main>
+  );
+>>>>>>> cb6204f6430fe58a881bd801b42f4d825808506a
 };
 
 export default Menus;

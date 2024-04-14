@@ -12,7 +12,7 @@ import {
 export default function Slideshow() {
   return (
     <div className="w-full h-auto flex justify-center">
-      <Carousel className="w-[90%] ">
+      <Carousel className="w-[90%] md:w-[60%] ">
         <CarouselContent>
           {Array.from({ length: 5 }).map((_, index) => (
             <CarouselItem key={index}>

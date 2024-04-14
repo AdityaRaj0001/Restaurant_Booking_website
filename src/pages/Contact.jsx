@@ -6,7 +6,20 @@ import BookTable from "../components/BookTable";
 import PaperBanner2 from "../components/PaperBanner2";
 import axios from "axios";
 const About = () => {
+<<<<<<< HEAD
 	const [heroUrl, setHeroUrl] = useState("");
+=======
+  return (
+    <main className="min-h-[100vh] overflow-hidden  relative w-full">
+      <Hero maintext="Contact" heroimg="./default-gallery-10.jpg" />
+      <Menu />
+	  <EnquiryForm/>
+      <BookTable />
+      <PaperBanner2/>
+    </main>
+  )
+}
+>>>>>>> cb6204f6430fe58a881bd801b42f4d825808506a
 
 	useEffect(() => {
 		getHeroUrl();

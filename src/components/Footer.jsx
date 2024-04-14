@@ -6,7 +6,7 @@ function Footer() {
 	initMap();
 	return (
 		<>
-			<footer className="relative w-full pt-12 pb-2 px-4 md:px-0" style={{ backgroundImage: `url('./paper-bg.jpg')`, backgroundSize: "cover", backgroundPosition: "center" }}>
+			<footer className="relative h-[100vh] flex items-center justify-center flex-col  text-white w-full pt-12 pb-2 px-4 md:px-0 bg-[url('./sidebarbg.jpg')] bg-repeat" >
 				<div className="absolute top-0 left-0 w-full h-[10px] bg-gradient-to-r from-[#8c7050] via-white to-[#8c7050]"></div>
 
 				<div className="px-4 flex justify-center gap-2 items-center my-5">
@@ -45,7 +45,7 @@ function Footer() {
 						</a>
 					</div>
 
-					<div id="map"></div>
+					<div className="md:w-[42%]" id="map"></div>
 				</div>
 
 				<hr className="my-4 w-11/12 mx-auto border-gray-400" />

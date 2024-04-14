@@ -31,6 +31,7 @@ const Occassions = () => {
 
 	const heroImageSrc = heroUrl ? heroUrl : "./occasions-hero.jpg";
   return (
+<<<<<<< HEAD
 		<main className="min-h-[100vh] relative w-full">
 			<Navbar />
 			<Hero maintext="Special Occasions" heroimg={heroImageSrc} />
@@ -41,6 +42,18 @@ const Occassions = () => {
 			{/* <PaperBanner2 /> */}
 		</main>
 	);
+=======
+    <main className="min-h-[100vh] overflow-hidden relative w-full">
+      <Navbar />
+      <Hero maintext="Special Occasions" heroimg="./default-gallery-10.jpg" />
+      <OccasionSecond/>
+      <EnquiryForm/>
+      <Slideshow />
+      <BookTable />
+      <PaperBanner2 />
+    </main>
+  );
+>>>>>>> cb6204f6430fe58a881bd801b42f4d825808506a
 };
 
 export default Occassions;

@@ -25,12 +25,21 @@ const Gallery = () => {
 
 	const heroImageSrc = heroUrl ? heroUrl : "./gallery-hero.jpg";
   return (
+<<<<<<< HEAD
 		<main className="min-h-[100vh] relative w-full">
 			<Hero maintext="Gallery" heroimg={heroImageSrc} />
 			<Menu />
 			<BookTable />
 		</main>
 	);
+=======
+    <main className="min-h-[100vh] overflow-hidden relative w-full">
+      <Hero maintext="Gallery" heroimg="./default-gallery-10.jpg" />
+      <Menu />
+      <BookTable />
+    </main>
+  )
+>>>>>>> cb6204f6430fe58a881bd801b42f4d825808506a
 }
 
 export default Gallery
