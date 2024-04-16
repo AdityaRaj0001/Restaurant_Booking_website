@@ -17,18 +17,9 @@ html {
 
 
 
-#map {
-  border: 2px solid rgb(181, 42, 42);
-  border-radius: 2px;
-  height: 320px; /* The height is 400 pixels */
-  width: 100%; /* The width is the width of the web page */
-}
 
-@media (min-width: 1024px) {
-  #map {
-    width: 42%; /* The width is the width of the web page */
-  }
-}
+
+
 
 
 .sedan-regular {

@@ -76,7 +76,11 @@ const LandingHero = () => {
           <div className="titleline h-[2px] w-[5%] bg-white"></div>
         </div>
         <p className="landingheropara w-full h-1/5 flex items-center justify-center">
-          <button className="h-auto py-2 px-2 w-[140px] md:h-[90%] md:w-[200px] md:font-medium md:text-2xl uppercase  text-[#1c0e34] bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] tracking-wider ">Book Table</button>
+          <button className="h-auto py-4  pb-6 px-2 w-[140px]  md:w-[200px] md:font-medium md:text-2xl uppercase  text-[#1c0e34] bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] hover:via-80% tracking-wider relative">Book Table
+          <div className="bg-purple-900 h-[2px] absolute w-full bottom-0 left-0">
+            </div>
+
+          </button>
         </p>
         <span className="landingherobtn sedan-regular w-1/2 md:mt-12 md:text-lg margin-b-12  opacit-30 text-center text-sm">
         33 CHARLOTTE STREET, FITZROVIA, LONDON, W1T 1RR

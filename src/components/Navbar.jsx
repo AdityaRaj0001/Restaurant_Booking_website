@@ -57,7 +57,7 @@ const Navbar = () => {
             <Link to="/contact">CONTACT</Link>
           </li>
 
-          <button className="text-left flex items-center justify-center py-2 font-normal text-sm  text-black bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] w-[100px]  ">
+          <button className="text-left  flex items-center justify-center py-3 font-medium tracking-widest text-sm  text-black bg-gradient-to-r from-[#7b4f1c] hover:via-70% via-white to-[#7b4f1c] w-auto px-4 ">
             <Link to="/bookatable">BOOK TABLE</Link>
           </button>
         </ul>
