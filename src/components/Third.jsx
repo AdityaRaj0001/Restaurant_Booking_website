@@ -109,7 +109,7 @@ const Third = () => {
         ></img>
         <div className="imagediv h-[40%] w-3/4 md:w-1/3 overflow-hidden md:h-3/4 flex items-center justify-center">
           <img
-            src="./story.jpg"
+            src="./home-about-image-1.jpg"
             className="h-full md:w-full transform transition-transform duration-500 hover:scale-110  object-cover"
           ></img>
         </div>
@@ -155,7 +155,7 @@ const Third = () => {
         ></img>
         <div className="imagediv overflow-hidden h-[40%] w-3/4 md:order-2 md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img
-            src="./story.jpg"
+            src="./home-about-image-2.jpg"
             className="h-full md:w-full transform transition-transform duration-500 hover:scale-110 object-cover"
           ></img>
         </div>
@@ -201,7 +201,7 @@ const Third = () => {
         ></img>
         <div className="imagediv overflow-hidden h-[40%] w-3/4  md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img
-            src="./story.jpg"
+            src="./home-about-image-4.jpg"
             className="h-full md:w-full transform transition-transform duration-500 hover:scale-110  object-cover"
           ></img>
         </div>
@@ -246,7 +246,7 @@ const Third = () => {
         ></img>
         <div className="imagediv overflow-hidden h-[40%] w-3/4 md:order-2  md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img
-            src="./story.jpg"
+            src="./home-about-image-5.jpg"
             className="h-full transform transition-transform duration-500 hover:scale-110 md:w-full  object-cover"
           ></img>
         </div>
@@ -291,7 +291,7 @@ const Third = () => {
         ></img>
         <div className="imagediv overflow-hidden h-[40%] w-3/4   md:w-1/3 md:h-3/4 flex items-center justify-center">
           <img
-            src="./story.jpg"
+            src="./home-about-image-3.jpg"
             className="h-full transform transition-transform duration-500 hover:scale-110 md:w-full  object-cover"
           ></img>
         </div>

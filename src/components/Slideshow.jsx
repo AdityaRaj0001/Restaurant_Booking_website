@@ -8,24 +8,26 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+const imageArray = ["./about-image-2.jpg", "./about-image-3.jpg", "./about-image-5.jpg", "./about-image-5.jpg", "./about-image-5.jpg"];
+
 
 export default function Slideshow() {
   return (
     <div className="w-full h-auto flex justify-center">
-      <Carousel className="w-[90%] md:w-[60%] ">
+      <Carousel className="w-[90%] md:w-[50%]">
         <CarouselContent>
-          {Array.from({ length: 5 }).map((_, index) => (
+          {imageArray.map((src, index) => (
             <CarouselItem key={index}>
               <div className="p-1">
                 <Card>
-                  <img src="./default-gallery-7.jpg" className="w-full object-cover md:h-full md:w-auto"></img>
+                  <img src={src} className="w-full object-cover md:h-full md:w-auto" alt={`Slide ${index + 1}`} />
                 </Card>
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
         <CarouselPrevious size={8} />
-        <CarouselNext  />
+        <CarouselNext />
       </Carousel>
     </div>
   );

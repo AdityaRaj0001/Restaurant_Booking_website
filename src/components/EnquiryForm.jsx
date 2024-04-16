@@ -28,28 +28,29 @@ const EnquiryForm = () => {
     }
 
 	return (
-		<div className="max-w-md mx-auto mb-12 md:mb-24">
+		<div className="max-w-md mx-auto mb-12 px-4 md:mb-24">
+			
 			<form onSubmit={handleSubmit} className="space-y-4">
 				<div>
-					<label htmlFor="firstname" className="block mb-1">
+					<label htmlFor="firstname" className="block mb-1 font-thin text-lg tracking-widest">
 						First Name:
 					</label>
 					<input type="text" id="firstname" name="firstname" value={formData.firstname} onChange={handleChange} className="w-full px-4 py-2 border" required />
 				</div>
 				<div>
-					<label htmlFor="lastname" className="block mb-1">
+					<label htmlFor="lastname" className="block mb-1 font-thin text-lg tracking-widest">
 						Last Name:
 					</label>
 					<input type="text" id="lastname" name="lastname" value={formData.lastname} onChange={handleChange} className="w-full px-4 py-2 border" required />
 				</div>
 				<div>
-					<label htmlFor="email" className="block mb-1">
+					<label htmlFor="email" className="block mb-1 font-thin text-lg tracking-widest">
 						Email:
 					</label>
 					<input type="email" id="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-2 border" required />
 				</div>
 				<div>
-					<label htmlFor="enquiry" className="block mb-1">
+					<label htmlFor="enquiry" className="block mb-1 font-thin text-lg tracking-widest" >
 						Enquiry:
 					</label>
 					<textarea id="enquiry" name="enquiry" value={formData.enquiry} onChange={handleChange} className="w-full px-4 py-2 border" rows="4" required></textarea>
@@ -62,7 +63,7 @@ const EnquiryForm = () => {
 					</div>
 				</div>
 
-				<button type="submit" className={` mt-3 w-full px-4 py-2 rounded-md hover:bg-violet-900 ${!verified ? "bg-violet-900 text-white cursor-not-allowed" : "bg-violet-900 text-white"}`} disabled={!verified}>
+				<button type="submit" className={` mt-3 sedan-regular text-2xl w-full px-4 py-2 rounded-md hover:bg-violet-900 ${!verified ? "bg-violet-900 text-white cursor-not-allowed" : "bg-violet-900 text-white"}`} disabled={!verified}>
 					Submit
 				</button>
 			</form>

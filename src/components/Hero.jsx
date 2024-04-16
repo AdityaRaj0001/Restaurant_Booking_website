@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
@@ -7,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const Hero = ({ maintext, heroimg }) => {
+const Hero = ({ maintext, heroimg, subtext, subtext2 }) => {
   const [heroUrl, setHeroUrl] = useState("");
   useEffect(() => {
     getHeroUrl();
@@ -57,14 +56,24 @@ const Hero = ({ maintext, heroimg }) => {
       />
       <div className="overlay -z-10 w-full h-full bg-black opacity-50 top-0 absolute"></div>
       <div className="h-1/2 mb-4   w-full  flex flex-col items-center justify-center text">
-        <div className="h-1/5 w-full flex justify-center gap-4 items-center">
-          <div className="titleline h-[2px] w-[5%] bg-white"></div>
-          <p className="w-auto h-full flex items-center justify-center uppercase sedan-regular  text-center text-3xl md:text-5xl font-medium ">
-            {maintext}
+        <div className="h-1/5 w-full flex justify-center flex-col gap-0 items-center">
+          <div className="h-4/5 w-full flex justify-center mb-4  gap-4 items-center">
+            <div className="titleline h-[2px] w-[5%] bg-white"></div>
+            <p className="w-auto h-full flex items-center justify-center uppercase sedan-regular  text-center text-3xl md:text-5xl font-medium ">
+              {maintext}
+            </p>
+            <div className="titleline h-[2px] w-[5%] bg-white"></div>
+          </div>
+
+          <p className="w-auto h-auto flex mt-4 items-center justify-center uppercase sedan-regular  text-center text-2xl md:text-4xl font-medium ">
+            {subtext}
           </p>
-          <div className="titleline h-[2px] w-[5%] bg-white"></div>
+          <p className="w-auto h-auto flex items-center justify-center uppercase   text-center text-lg md:text-xl font-medium ">
+            {subtext2}
+          </p>
         </div>
       </div>
+
       <div className="absolute z-10 bottom-0 h-[10px] w-full bg-gradient-to-r from-[#8c7050] via-white to-[#8c7050]"></div>
     </div>
   );

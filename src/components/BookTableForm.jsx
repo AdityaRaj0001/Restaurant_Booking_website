@@ -41,8 +41,8 @@ const TableBookingForm = () => {
 	};
 
 	return (
-		<div className="max-w-md mx-auto">
-			<h2 className="text-xl font-bold mb-4 text-center">Table Booking</h2>
+		<div className="max-w-md mx-auto px-4">
+			<h2 className="text-2xl font-bold mb-4 text-center sedan-regular md:text-3xl text-[#46296e]">Table Booking</h2>
 			<form onSubmit={handleSubmit} className="space-y-4">
 				<div>
 					<label htmlFor="partySize" className="block mb-1">
