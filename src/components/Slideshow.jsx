@@ -2,22 +2,20 @@ import * as React from "react";
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { LandingPageContext } from "../context/landingPage";
 
-export default function Slideshow() {
-	const landingPage = React.useContext(LandingPageContext);
+
+export default function Slideshow({ pageData }) {
 	const [imageArray, setImageArray] = React.useState([]);
 
 	React.useEffect(() => {
-		if (landingPage && landingPage.gallery_images) {
-			const urls = landingPage.gallery_images.map((image) => {
+		if (pageData && pageData.gallery_images) {
+			const urls = pageData.gallery_images.map((image) => {
 				// Assuming the structure of each image object is { images: { data: [{ attributes: { url } }] } }
-				return `${import.meta.env.VITE_STRAPI_BASE_URL}${image.images.data[0].attributes.url}`;
+				return `${import.meta.env.VITE_STRAPI_BASE_URL}${image?.images?.data[0]?.attributes?.url}`;
 			});
 			setImageArray(urls);
 		}
-	}, [landingPage]);
-
+	}, [pageData]);
 
 	return (
 		<div className="w-full h-auto flex justify-center">

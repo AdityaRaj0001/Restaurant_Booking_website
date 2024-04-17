@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import Slideshow from "../components/Slideshow";
 import BookTable from "../components/BookTable";
 import PaperBanner2 from "../components/PaperBanner2";
@@ -7,40 +7,26 @@ import Hero from "../components/Hero";
 import OccasionSecond from "../components/OccasionSecond";
 import EnquiryForm from '../components/EnquiryForm';
 import axios from "axios";
+import { OccasionPageContext } from "../context/occasionPage";
 
 
 const Occassions = () => {
-  const [heroUrl, setHeroUrl] = useState("");
+	const occasionPage = useContext(OccasionPageContext);
 
-	useEffect(() => {
-		getHeroUrl();
-	}, []);
+	console.log(occasionPage);
 
-	const getHeroUrl = async () => {
-		try {
-			const res = await axios.get(`${import.meta.env.VITE_STRAPI_BASE_URL}/api/occasion-hero?populate=*`, {
-				headers: {
-					Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
-				},
-			});
-			setHeroUrl(`${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.occasion_hero_img.data.attributes.url}`);
-		} catch (error) {
-			console.log(error.message);
-		}
-	};
-
-	const heroImageSrc = heroUrl ? heroUrl : "./occasions-hero.jpg";
+	const heroUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${occasionPage?.hero_img?.data?.attributes?.url}`;
   return (
-    <main className="min-h-[100vh] overflow-hidden relative w-full">
-      <Navbar />
-      <Hero maintext="Special Occasions" heroimg="./default-gallery-10.jpg" />
-      <OccasionSecond/>
-      <EnquiryForm/>
-      <Slideshow />
-      <BookTable />
-      <PaperBanner2 />
-    </main>
-  );
+		<main className="min-h-[100vh] overflow-hidden relative w-full">
+			<Navbar />
+			<Hero maintext={occasionPage?.hero_title} heroimg={heroUrl} />
+			<OccasionSecond />
+			<EnquiryForm />
+			<Slideshow pageData={occasionPage}/>
+			<BookTable />
+			<PaperBanner2 />
+		</main>
+	);
 };
 
 export default Occassions;

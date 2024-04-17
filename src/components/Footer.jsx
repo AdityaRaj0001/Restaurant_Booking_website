@@ -6,7 +6,6 @@ import { DetailsContext } from "../context/staticDetails";
 function Footer() {
   const details = useContext(DetailsContext);
 
-  console.log(details);
   initMap();
   return (
 		<>

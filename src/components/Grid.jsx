@@ -4,20 +4,15 @@ import { LandingPageContext } from "../context/landingPage";
 const Grid = () => {
   const landingPage = useContext(LandingPageContext);
 
+  const img1 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[0]?.images?.data[0]?.attributes?.url}`;
+	const img2 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[1]?.images?.data[0]?.attributes?.url}`;
+	const img3 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[2]?.images?.data[0]?.attributes?.url}`;
+	const img4 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[3]?.images?.data[0]?.attributes?.url}`;
+	const img5 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[4]?.images?.data[0]?.attributes?.url}`;
+	const img6 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[5]?.images?.data[0]?.attributes?.url}`;
+	const img7 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[6]?.images?.data[0]?.attributes?.url}`;
+	const img8 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[7]?.images?.data[0]?.attributes?.url}`;
 
-  const img1 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[0].images.data[0].attributes.url}`;
-
-  const img2 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[1].images.data[0].attributes.url}`;
-
-  const img3 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[2].images.data[0].attributes.url}`;
-
-  const img4 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[3].images.data[0].attributes.url}`;
-
-  const img5 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[4].images.data[0].attributes.url}`;
-
-  const img6 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[5].images.data[0].attributes.url}`;
-  const img7 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[6].images.data[0].attributes.url}`;
-  const img8 = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.grid_images[7].images.data[0].attributes.url}`;
 
   return (
     <div className="w-full h-[70vh] md:h-[100vh]  md:gap-4 py-16 flex flex-col items-center justify-center">

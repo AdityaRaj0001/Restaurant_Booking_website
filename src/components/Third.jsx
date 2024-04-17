@@ -14,6 +14,7 @@ const Third = () => {
 
 	const landingPage = useContext(LandingPageContext);
 
+
 	useGSAP(
 		() => {
 			let imagedivs = gsap.utils.toArray(".imagediv");
@@ -58,24 +59,24 @@ const Third = () => {
 	return (
 		<div ref={containerRef} className="h-auto w-full flex flex-col items-center justify-start pt-12 gap-2">
 			<p className="w-auto text-center sedan-regular text-[12px] md:text-[16px]">
-				{details.addressLine1}, {details.addressLine2}, {details.addressLine3}
+				{details?.addressLine1}, {details?.addressLine2}, {details?.addressLine3}
 			</p>
 			<div className="w-4/5 px-4 sedan-regular flex justify-center  items-center">
 				<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
-				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">{landingPage.welcome_block.title}</p>
+				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">{landingPage?.welcome_block?.title}</p>
 				<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
 			</div>
 
-			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage.welcome_block.Description[0].description_line}</p>
-			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage.welcome_block.Description[1].description_line}</p>
-			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage.welcome_block.Description[2].description_line}</p>
+			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage?.welcome_block?.description[0]?.description_line}</p>
+			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage?.welcome_block?.description[1]?.description_line}</p>
+			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl md:w-3/5">{landingPage?.welcome_block?.description[2]?.description_line}</p>
 
 			<div className="w-4/5 md:w-3/5 px-4 sedan-regular flex justify-center  items-center">
 				<div className="h-[2px] w-[10%] bg-black"></div>
-				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-[20px] md:text-3xl">{landingPage.offer_block.title}</p>
+				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-[20px] md:text-3xl">{landingPage?.offer_block?.title}</p>
 				<div className="h-[2px] w-[10%] bg-black"></div>
 			</div>
-			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl mb-8 md:w-3/5">{landingPage.offer_block.Description[0].description_line}</p>
+			<p className="w-4/5 mt-4 text-center font-thin px-4 md:text-xl mb-8 md:w-3/5">{landingPage?.offer_block?.description[0]?.description_line}</p>
 
 			<div className="h-auto md:h-[60vh]  mb-8 relative w-full flex flex-col md:flex-row items-center justify-center">
 				<img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>

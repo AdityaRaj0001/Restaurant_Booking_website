@@ -1,5 +1,5 @@
-import axios from "axios";
-import React, { useEffect, useState, useRef } from "react";
+
+import React from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
@@ -7,32 +7,7 @@ import { useGSAP } from "@gsap/react";
 gsap.registerPlugin(ScrollTrigger);
 
 const Hero = ({ maintext, heroimg, subtext, subtext2 }) => {
-  const [heroUrl, setHeroUrl] = useState("");
-  useEffect(() => {
-    getHeroUrl();
-  }, []);
-
-  const getHeroUrl = async () => {
-    try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_STRAPI_BASE_URL}/api/hero-section?populate=*`,
-        {
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
-          },
-        }
-      );
-
-      setHeroUrl(
-        `${import.meta.env.VITE_STRAPI_BASE_URL}${
-          res.data.data.attributes.homehero.data[0].attributes.url
-        }`
-      );
-      console.log(heroUrl);
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
+  
   useGSAP(() => {
     const tl = gsap.timeline();
     tl.from([".heroimg", ".herotitle"], {

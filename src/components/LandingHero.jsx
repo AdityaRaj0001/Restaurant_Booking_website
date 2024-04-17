@@ -43,6 +43,7 @@ const LandingHero = () => {
 
 
     const heroImgUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.hero_img?.data?.attributes?.url}`;
+
     
 
 	return (
