@@ -16,7 +16,6 @@ const initMap = async function initMap() {
 
 		imageUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${res.data.data.attributes.image.data[0].attributes.url}`;
 
-		console.log(imageUrl);
 	} catch (error) {
 		console.error("Error fetching image URL:", error);
 		// Handle the error, if needed

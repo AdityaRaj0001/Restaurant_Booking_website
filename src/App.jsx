@@ -11,27 +11,29 @@ import Press from "./pages/Press";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { DetailsProvider } from "./context/staticDetails.jsx";
 
 function App() {
-  return (
-    <>
-      <BrowserRouter>
-      <Navbar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-
-          <Route path="/about" element={<About />} />
-          <Route path="/bookatable" element={<BookATable />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/menus" element={<Menus />} />
-          <Route path="/occassions" element={<Occassions />} />
-          <Route path="/press" element={<Press />} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </>
-  );
+	return (
+		<>
+			<DetailsProvider>
+				<BrowserRouter>
+					<Navbar />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/bookatable" element={<BookATable />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/gallery" element={<Gallery />} />
+						<Route path="/menus" element={<Menus />} />
+						<Route path="/occassions" element={<Occassions />} />
+						<Route path="/press" element={<Press />} />
+					</Routes>
+					<Footer />
+				</BrowserRouter>
+			</DetailsProvider>
+		</>
+	);
 }
 
 export default App;
