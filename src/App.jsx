@@ -13,12 +13,14 @@ import Press2 from "./components/wrapper/Press2.jsx";
 import About2 from "./components/wrapper/About2.jsx";
 import Contact2 from "./components/wrapper/Contact2.jsx";
 import BookATable2 from "./components/wrapper/BookATable2.jsx";
+import ScrollToTop from "./components/ScrollToTop.jsx";
 
 function App() {
 	return (
 		<>
 			<DetailsProvider>
 				<BrowserRouter>
+					<ScrollToTop />
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home2 />} />
