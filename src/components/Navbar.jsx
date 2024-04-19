@@ -29,7 +29,7 @@ const Navbar = () => {
 		<div className={`h-[75px] z-50 fixed top-0 w-full bg-transparent md:flex justify-center ${parentDivClassName}`}>
 			<div className=" flex justify-between text-white items-center px-4   h-full w-full ">
 				<Link className="w-1/4 h-4/5 flex items-center justify-center" to="/">
-					<img src="./blueroom-logo.jpeg" alt="logo" style={{ maxWidth: "80px", maxHeight: "100%" }} />
+					<img src="./blueroom-logo-removebg.png" alt="logo" style={{ maxWidth: "80px", maxHeight: "100%" }} />
 				</Link>
 				<span className="w-1/4">{details.phone}</span>
 				<button className="w-1/4 text-black py-2 font-normal bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] md:hidden">Book Table</button>

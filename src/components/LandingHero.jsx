@@ -3,7 +3,7 @@ import React, {  useRef, useContext } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { DetailsContext } from "../context/staticDetails";
 import { LandingPageContext } from "../context/landingPage";
 
@@ -14,7 +14,7 @@ const LandingHero = () => {
 	const landingPage = useContext(LandingPageContext);
 	const containerRef = useRef(null);
 
-
+	const navigate = useNavigate();
 	useGSAP(
 		() => {
 			const tl = gsap.timeline();
@@ -41,6 +41,10 @@ const LandingHero = () => {
 		{ scope: containerRef }
 	);
 
+	const handleClick = () => {
+		navigate("/bookatable");
+	};
+
 
     const heroImgUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${landingPage?.hero_img?.data?.attributes?.url}`;
 
@@ -62,7 +66,10 @@ const LandingHero = () => {
 					<div className="titleline h-[2px] w-[5%] bg-white"></div>
 				</div>
 				<p className="landingheropara w-full h-1/5 flex items-center justify-center">
-					<button className="h-auto py-4  pb-6 px-2 w-[140px]  md:w-[200px] md:font-medium md:text-2xl uppercase  text-[#1c0e34] bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] hover:via-80% tracking-wider relative">
+					<button
+						className="h-auto py-4 pb-6 px-2 w-[140px] md:w-[200px] md:font-medium md:text-2xl uppercase text-[#1c0e34] bg-gradient-to-r from-[#7b4f1c] via-white to-[#7b4f1c] hover:via-80% tracking-wider relative"
+						onClick={handleClick} // Call handleClick when the button is clicked
+					>
 						Book Table
 						<div className="bg-purple-900 h-[2px] absolute w-full bottom-0 left-0"></div>
 					</button>

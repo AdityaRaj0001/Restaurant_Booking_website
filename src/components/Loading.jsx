@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const Loading = ({ isLoading }) => {
+	useEffect(() => {
+		const intervalId = setInterval(() => {
+			window.location.reload();
+		}, 2000);
+
+		return () => clearInterval(intervalId);
+	}, []);
+
 	if (!isLoading) return null;
 
 	return (

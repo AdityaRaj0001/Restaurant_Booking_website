@@ -3,53 +3,51 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
 import { MenuPageContext } from "../context/menuPage";
+import Loading from "./Loading";
 gsap.registerPlugin(ScrollTrigger);
 
 const Menu = () => {
+	const menuPage = useContext(MenuPageContext);
 
-  const menuPage = useContext(MenuPageContext);
+	// Check if menuPage is available
+	if (!menuPage) {
+		return <Loading isLoading={true}/>;
+	}
+	useGSAP(() => {
+		let flowersbigarray = gsap.utils.toArray(".flowersbig");
 
-  console.log(menuPage);
-  useGSAP(
-    () => {
-      let flowersbigarray = gsap.utils.toArray(".flowersbig");
+		for (let i = 0; i < flowersbigarray.length; i++) {
+			gsap.from(flowersbigarray[i], {
+				x: i === 1 ? "150px" : "-150px",
+				duration: 4,
+				scrollTrigger: {
+					trigger: ".menuparent",
+					start: "-100% top",
+					end: "-100% top",
+				},
+			});
+		}
+		gsap.from(".menu", {
+			opacity: 0,
+			duration: 1.5,
+			stagger: 0.5,
+			scrollTrigger: {
+				trigger: ".menutypesparent",
+				start: "-80% top",
+				end: "-80% top",
+			},
+		});
+	}, {});
 
-      for (let i = 0; i < flowersbigarray.length; i++) {
-        gsap.from(flowersbigarray[i], {
-          x: i === 1 ? "150px" : "-150px",
-          duration: 4,
-          scrollTrigger: {
-            trigger: ".menuparent",
-            start: "-100% top",
-            end: "-100% top",
-          },
-        });
-      }
-      gsap.from(".menu", {
-        opacity:0,
-        duration: 1.5,
-        stagger:0.5,
-        scrollTrigger: {
-          trigger: ".menutypesparent",
-          start: "-80% top",
-          end: "-80% top",
-        },
-      });
-    },
-    { }
-  );
+	const menuImg1 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[0]?.image?.data?.attributes?.url}`;
 
-  const menuImg1 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[0]?.image?.data?.attributes?.url}`;
+	const menuImg2 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[1]?.image?.data?.attributes?.url}`;
 
-  const menuImg2 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[1]?.image?.data?.attributes?.url}`;
+	const menuImg3 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[2]?.image?.data?.attributes?.url}`;
 
-  const menuImg3 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[2]?.image?.data?.attributes?.url}`;
+	const menuImg4 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[3]?.image?.data?.attributes?.url}`;
 
-  const menuImg4 = `${import.meta.env.VITE_STRAPI_BASE_URL}${menuPage?.menu_grid[3]?.image?.data?.attributes?.url}`;
-
-
-
-  return (
+	return (
 		<div className="menuparent pb-20  md:pb-40 h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
 			<img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
 			<img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>

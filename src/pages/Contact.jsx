@@ -1,22 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext } from "react";
 import EnquiryForm from "../components/EnquiryForm";
 import Hero from "../components/Hero";
-import Menu from "../components/Menu";
 import BookTable from "../components/BookTable";
 import PaperBanner2 from "../components/PaperBanner2";
-import axios from "axios";
-import { useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { ContactPageContext } from "../context/contactPage";
+import { DetailsContext } from "../context/staticDetails";
 gsap.registerPlugin(ScrollTrigger);
 
-const About = () => {
-  const [heroUrl, setHeroUrl] = useState("");
+const Contact = () => {
+  const contactPage = useContext(ContactPageContext);
 
-  useEffect(() => {
-    getHeroUrl();
-  }, []);
+  const details = useContext(DetailsContext);
+
+  console.log(contactPage);
+
   useGSAP(
     () => {
       let flowersbigarray = gsap.utils.toArray(".flowersbig");
@@ -46,103 +46,48 @@ const About = () => {
     { }
   );
 
-  const getHeroUrl = async () => {
-    try {
-      const res = await axios.get(
-        `${import.meta.env.VITE_STRAPI_BASE_URL}/api/contact-hero?populate=*`,
-        {
-          headers: {
-            Authorization: `Bearer ${import.meta.env.VITE_STRAPI_API_TOKEN}`,
-          },
-        }
-      );
-      setHeroUrl(
-        `${import.meta.env.VITE_STRAPI_BASE_URL}${
-          res.data.data.attributes.contact_hero_img.data.attributes.url
-        }`
-      );
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  const heroImageSrc = heroUrl ? heroUrl : "./contact-hero.jpg";
+  const heroUrl = `${import.meta.env.VITE_STRAPI_BASE_URL}${contactPage?.hero_img?.data?.attributes?.url}`;
   return (
-    <main className="min-h-[100vh] relative w-full overflow-hidden">
-      <Hero maintext="Contact" heroimg={heroImageSrc} />
-      <div className="menuparent pb-20  md:pb-12 h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
-        <img
-          src="./plantbgmobile.png"
-          className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] "
-          alt="plant background"
-        ></img>
-        <img
-          src="./plantbgmobile.png"
-          className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 "
-          alt="plant background"
-        ></img>
-        <img
-          src="./plant-bg big.png"
-          className="flowersbig absolute hidden xl:block left-0 z-20  -top-44 w-[18%] scale-y-100"
-          alt="plant background"
-        ></img>
-        <img
-          src="./plant-bg big right.png"
-          className="flowersbig absolute hidden  xl:block right-0 z-20 -top-44 w-[18%] -scale-y-100 "
-          alt="plant background"
-        ></img>
-        {/* <p className="w-auto text-center sedan-regular text-[12px] md:text-[16px]">
-          BY MICHELIN EXPERIENCED CHEFS
-        </p> */}
-        <div className="w-4/5 px-4 sedan-regular flex justify-center  items-center">
-          <div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
-          <p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">
-            GET IN TOUCH
-          </p>
-          <div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
-        </div>
+		<main className="min-h-[100vh] relative w-full overflow-hidden">
+			<Hero maintext={contactPage?.hero_title} heroimg={heroUrl} />
+			<div className="menuparent pb-20  md:pb-12 h-auto relative w-full flex flex-col items-center justify-start pt-12 gap-0">
+				<img src="./plantbgmobile.png" className="absolute xl:hidden left-0 z-20  -top-8 w-[17%] " alt="plant background"></img>
+				<img src="./plantbgmobile.png" className="absolute xl:hidden right-0 z-20  top-16 w-[14%] -scale-x-100 " alt="plant background"></img>
+				<img src="./plant-bg big.png" className="flowersbig absolute hidden xl:block left-0 z-20  -top-44 w-[18%] scale-y-100" alt="plant background"></img>
+				<img src="./plant-bg big right.png" className="flowersbig absolute hidden  xl:block right-0 z-20 -top-44 w-[18%] -scale-y-100 " alt="plant background"></img>
+				<div className="w-4/5 px-4 sedan-regular flex justify-center  items-center">
+					<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
+					<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">{contactPage?.welcome_title}</p>
+					<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
+				</div>
 
-        <p className="w-3/5  mt-6 text-center font-thin px-4 md:text-xl ">
-          33 Charlotte Street
-        </p>
-        <p className="w-3/5   text-center font-thin px-4 md:text-xl ">
-          Fitzrovia, London
-        </p>
-        <p className="w-3/5  text-center font-thin px-4 md:text-xl ">W1T 1RR</p>
-        <p className="w-3/5  mt-4 mb-8 text-center font-thin px-4 md:text-lsm ">
-          (Entrance opposite Rathbone Hotel on Rathbone Street){" "}
-        </p>
-        <p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">
-          <a className="underline text-lg " href="mailto:info@1947london.com">
-            info@1947london.com
-          </a>
-        </p>
-        <p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">
-          <a className="text-lg" href="tel:0207 693 6290">
-            020 7693 6290
-          </a>
-        </p>
-        <div className="w-4/5 mt-24 px-4 sedan-regular flex justify-center  items-center">
-          <div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
-          <p className="text-[#46296e] uppercase h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-3xl">
-            ENQUIRE NOW
-          </p>
-          <div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
-        </div>
-        <p className="w-3/5  mt-4  text-center font-thin px-4 md:text-xl ">
-          If you have general enquiry, get in touch with us using the form
-          below.{" "}
-        </p>
-        <p className="w-3/5  mt-4  text-center font-thin px-4 md:text-xl ">
-          If you would like to make, change or discuss the details of an
-          existing reservation, please call us directly on 020 7693 6290{" "}
-        </p>
-      </div>
-      <EnquiryForm />
-      <BookTable />
-      {/* <PaperBanner2/> */}
-    </main>
-  );
+				<p className="w-3/5  mt-6 text-center font-thin px-4 md:text-xl ">{details?.addressLine1}</p>
+				<p className="w-3/5   text-center font-thin px-4 md:text-xl ">{details?.addressLine2}</p>
+				<p className="w-3/5  text-center font-thin px-4 md:text-xl ">{details?.addressLine3}</p>
+				<p className="w-3/5  mt-4 mb-8 text-center font-thin px-4 md:text-lsm ">({details?.addressLine4}) </p>
+				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">
+					<a className="underline text-lg " href="mailto:info@1947london.com">
+						{details?.email}
+					</a>
+				</p>
+				<p className="text-[#46296e] h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-4xl">
+					<a className="text-lg" href="tel:0207 693 6290">
+						{details?.phone}
+					</a>
+				</p>
+				<div className="w-4/5 mt-24 px-4 sedan-regular flex justify-center  items-center">
+					<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
+					<p className="text-[#46296e] uppercase h-full flex px-2 items-center justify-center font-medium  text-center text-2xl md:text-3xl">{contactPage?.enquire_content?.title}</p>
+					<div className="h-[2px] w-[10%] md:w-[5%] bg-black"></div>
+				</div>
+				<p className="w-3/5  mt-4  text-center font-thin px-4 md:text-xl ">{contactPage?.enquire_content?.description[0].description_line}</p>
+				<p className="w-3/5  mt-4  text-center font-thin px-4 md:text-xl ">{contactPage?.enquire_content?.description[1].description_line}</p>
+			</div>
+			<EnquiryForm />
+			<BookTable />
+			<PaperBanner2/>
+		</main>
+	);
 };
 
-export default About;
+export default Contact;
